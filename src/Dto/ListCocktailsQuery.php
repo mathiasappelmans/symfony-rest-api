@@ -2,7 +2,9 @@
 
 namespace App\Dto;
 
-class ListCocktailsQuery
+// final: empêche les classes enfants de redéfinir une méthode, une propriété ou constante
+// readonly: all properties of that class will be readonly (initialized once and no changes possible)
+final readonly class ListCocktailsQuery
 {
 	public function __construct(
 		public ?string $name = null,
@@ -13,4 +15,4 @@ class ListCocktailsQuery
 	)	{
 		
 	}
-}
+} 

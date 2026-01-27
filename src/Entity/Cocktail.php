@@ -13,28 +13,31 @@ class Cocktail
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+		#[Groups(['cocktail:read'])]
     private ?int $id = null;
 
-		//#[Groups(['cocktail:read'])]
+		#[Groups(['cocktail:read'])]
     #[ORM\Column(length: 255)]
     private ?string $name = null;
-
+		
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
-
+		
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $instructions = null;
-
+		
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imageUrl = null;
-
+		
     #[ORM\Column(nullable: true)]
     private ?array $ingredients = null;
-
+		
+		#[Groups(['cocktail:read'])]
     #[ORM\Column(type: Types::SMALLINT, nullable: true)]
     private ?int $difficulty = null;
-
+		
     #[ORM\Column]
+		#[Groups(['cocktail:read'])]
     private ?bool $isAlcoholic = null;
 
     #[ORM\Column]

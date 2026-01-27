@@ -12,10 +12,12 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class CocktailRepository extends ServiceEntityRepository
 {
+	
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Cocktail::class);
     }
+
 
 		public function findAllWithQuery(ListCocktailsQuery $query)
 		{
@@ -23,7 +25,7 @@ class CocktailRepository extends ServiceEntityRepository
 
 			if ($query->name) {
 				$qb->andWhere('c.name LIKE :name')
-					->setParameter('name', '%$query->name%');
+					->setParameter('name', "%$query->name%");
 			}
 			if (null !== $query->isAlcoholic) {
 				$qb
