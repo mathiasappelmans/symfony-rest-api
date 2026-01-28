@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "List Cocktails",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

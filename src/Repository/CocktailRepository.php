@@ -42,6 +42,9 @@ class CocktailRepository extends ServiceEntityRepository
 			$qb->setFirstResult($offset)
 				->setMaxResults($query->itemsPerPage);
 
+			return $this->createQueryBuilder('c')
+				->setMaxResults()
+
 			return $qb->getQuery()->getResult();
 		}
 }

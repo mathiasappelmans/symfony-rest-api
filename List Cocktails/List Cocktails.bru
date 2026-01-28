@@ -1,0 +1,22 @@
+meta {
+  name: List Cocktails
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8000/api/cocktails?difficulty=4
+  body: none
+  auth: inherit
+}
+
+params:query {
+  difficulty: 4
+  ~name: mojito
+  ~isAlcoholic: false
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

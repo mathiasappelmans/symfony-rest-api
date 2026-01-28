@@ -1,0 +1,20 @@
+meta {
+  name: Show Cocktail
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8000/api/cocktails/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 7
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
